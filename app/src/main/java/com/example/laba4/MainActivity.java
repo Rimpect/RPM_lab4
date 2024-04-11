@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
         String regularr = prefs.getString(getString(R.string.pref_font_color), "");
         if (regularr.contains("Черный"))
-        mEditText.setTextColor(Color.BLACK);
+            mEditText.setTextColor(Color.BLACK);
         if (regularr.contains("Зелёный"))
             mEditText.setTextColor(Color.GREEN);
         if (regularr.contains("Красный"))
