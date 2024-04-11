@@ -1,10 +1,10 @@
 package com.example.laba4;
 
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,13 +19,18 @@ import java.io.OutputStreamWriter;
 public class MainActivity extends AppCompatActivity {
     private final static String FILENAME = "sample.txt"; // имя файла
     private EditText mEditText;
-
     Toolbar myToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Spinner spinner = findViewById(R.id.spinner);
+
+        // Инициализация EditText
+        mEditText = findViewById(R.id.editText);
+
+        myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
     }
 
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 saveFile(FILENAME);
                 return true;
             default:
-                return true;
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -61,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder builder = new StringBuilder();
 
                 while ((line = reader.readLine()) != null) {
-                    builder.append(line + "\n");
+                    builder.append(line).append("\n");
                 }
 
                 inputStream.close();

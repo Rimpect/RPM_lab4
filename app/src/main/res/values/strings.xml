@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">laba4</string>
+    <string name="action_open">Open</string>
+    <string name="action_save">Save</string>
+<string-array name="spinner_items">
+    <item>Настройки</item>
+    <item>Очистить</item>
+    <item>Сохранить</item>
+    <item>Выход</item>
+</string-array>
 </resources>
