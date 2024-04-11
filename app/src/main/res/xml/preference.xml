@@ -14,15 +14,15 @@
         android:summary="Устанавливает новый размер шрифта"
         android:title="Размер шрифта" />
     <ListPreference
-        android:key="@string/pref_style"
+        android:key="@string/pref_font_color"
         android:title="Цвет шрифта"
         android:summary="Устанавливает цвет для шрифта"
         android:defaultValue="1"
-        android:entries="@array/text_style"
-        android:entryValues="@array/text_style"
+        android:entries="@array/text_color"
+        android:entryValues="@array/text_color"
         android:dialogTitle="Выберите цвет для шрифта" />
     <ListPreference
-        android:key="@string/pref_font"
+        android:key="@string/pref_style"
         android:title="Шрифт"
         android:summary="Устанавливает шрифт"
         android:defaultValue="1"

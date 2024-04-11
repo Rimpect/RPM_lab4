@@ -6,7 +6,7 @@
     <string name="action_settings">Настройки</string>
     <string name="action_exit">Выход</string>
     <string name="pref_background">Фон</string>
-    <string name="pref_font">Шрифт</string>
+    <string name="pref_font_color">Цвет шрифта</string>
     <string name="pref_openmode">Режим открытия</string>
     <string name="pref_color">Цвет</string>
     <string name="pref_color_black">Черный цвет</string>
