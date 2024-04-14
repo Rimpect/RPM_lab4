@@ -5,7 +5,7 @@
         <item>Обычный</item>
         <item>Полужирный</item>
         <item>Курсив</item>
-        <item>Полужирный+Курсив</item>
+        <item>Авторский</item>
     </string-array>
     <string-array name="text_color">
         <item>Черный</item>

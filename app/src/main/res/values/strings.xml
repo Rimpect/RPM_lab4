@@ -18,6 +18,7 @@
     <string name="pref_style_regular">Нормальный</string>
     <string name="pref_style_bold">Полужирный</string>
     <string name="pref_style_italic">Курсив</string>
+    <string name="pref_style_creater">Авторский</string>
 <string-array name="spinner_items">
     <item>Настройки</item>
     <item>Очистить</item>
