@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -130,20 +131,34 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // читаем размер шрифта из EditTextPreference
-        float fSize = Float.parseFloat(prefs.getString(
-                getString(R.string.pref_size), "20"));
-// применяем настройки в текстовом поле
-        mEditText.setTextSize(fSize);
+// Читаем размер шрифта из SharedPreferences
+        String sizeString = prefs.getString(getString(R.string.pref_size), "20");
+
+        try {
+            float fSize = Float.parseFloat(sizeString);
+            if (fSize > 0 && fSize <= 32) {
+                mEditText.setTextSize(fSize);
+            } else {
+                mEditText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            }
+        } catch (NumberFormatException e) {
+            mEditText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        }
         // читаем стили текста из ListPreference
         String regular = prefs.getString(getString(R.string.pref_style), "");
-        int typeface = Typeface.NORMAL;
-
+        Typeface typefacee = Typeface.createFromAsset(getAssets(), "my_font.ttf");
+        int typeface = 0;
+        if (regular.contains("Нормальный"))
+            typeface += Typeface.NORMAL;
+            mEditText.setTypeface(null, typeface);
         if (regular.contains("Полужирный"))
             typeface += Typeface.BOLD;
-
+            mEditText.setTypeface(null, typeface);
         if (regular.contains("Курсив"))
             typeface += Typeface.ITALIC;
-
+            mEditText.setTypeface(null, typeface);
+        if (regular.contains("Авторский"))
+            mEditText.setTypeface(typefacee);
         String regularr = prefs.getString(getString(R.string.pref_font_color), "");
         if (regularr.contains("Черный"))
             mEditText.setTextColor(Color.BLACK);
@@ -153,8 +168,5 @@ public class MainActivity extends AppCompatActivity {
             mEditText.setTextColor(Color.RED);
         if (regularr.contains("Синий"))
             mEditText.setTextColor(Color.BLUE);
-
-// меняем настройки в EditText
-        mEditText.setTypeface(null, typeface);
     }
 }
