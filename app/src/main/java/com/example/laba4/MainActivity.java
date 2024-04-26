@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // читаем стили текста из ListPreference
         String regular = prefs.getString(getString(R.string.pref_style), "");
-        Typeface typefacee = Typeface.createFromAsset(getAssets(), "my_font.ttf");
+        Typeface typefacee = Typeface.createFromAsset(getAssets(), "font2.ttf");
         int typeface = 0;
         if (regular.contains("Нормальный"))
             typeface += Typeface.NORMAL;
